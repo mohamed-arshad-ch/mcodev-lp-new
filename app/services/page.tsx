@@ -358,7 +358,7 @@ export default function ServicesPage() {
                     Digital Services
                   </span>
                   <span className="block text-2xl sm:text-3xl lg:text-4xl font-normal text-gray-300 mt-4">
-                    Kerala's Leading IT Solutions
+                    Kerala&apos;s Leading IT Solutions
                   </span>
                 </h1>
                 

@@ -247,7 +247,7 @@ export default function About() {
                   About MCODEV Bytes
                 </span>
                 <span className="block text-2xl sm:text-3xl lg:text-4xl font-normal text-gray-300 mt-4">
-                  Kerala's Leading Web Development Company
+                  Kerala&apos;s Leading Web Development Company
                 </span>
               </h1>
               
@@ -423,8 +423,8 @@ export default function About() {
               <span className="block text-emerald-400">Digital Journey?</span>
             </h2>
             
-            <p className="text-xl text-gray-300">
-                              Let&apos;s collaborate and bring your ideas to life with cutting-edge technology solutions.
+                        <p className="text-xl text-gray-300">
+              Let&apos;s collaborate and bring your ideas to life with cutting-edge technology solutions.
             </p>
             
             <div className="flex flex-col sm:flex-row gap-4 justify-center">

@@ -34,13 +34,10 @@ const servicesData = {
   }
 };
 
-type Props = {
-  params: { slug: string };
-  children: React.ReactNode;
-};
 
-export async function generateMetadata({ params }: { params: { slug: string } }): Promise<Metadata> {
-  const slug = params.slug;
+
+export async function generateMetadata({ params }: { params: Promise<{ slug: string }> }): Promise<Metadata> {
+  const { slug } = await params;
   const serviceData = servicesData[slug as keyof typeof servicesData];
   
   if (!serviceData) {
