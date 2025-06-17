@@ -1,7 +1,6 @@
 "use client"
 
 import React, { useEffect, useState } from "react"
-import Link from "next/link"
 import Head from "next/head"
 import Header from "../components/Header"
 import Footer from "../components/Footer"
@@ -181,7 +180,7 @@ export default function ContactPage() {
               <div className="space-y-6">
                 <h1 className="text-5xl sm:text-6xl lg:text-7xl font-bold text-white leading-[0.9] tracking-tight">
                   <span className="block bg-gradient-to-r from-white via-emerald-200 to-emerald-400 bg-clip-text text-transparent">
-                    Let's Build
+                    Let&apos;s Build
                   </span>
                   <span className="block text-2xl sm:text-3xl lg:text-4xl font-normal text-gray-300 mt-4">
                     Something Amazing Together
@@ -189,8 +188,8 @@ export default function ContactPage() {
                 </h1>
                 
                 <p className="text-xl lg:text-2xl text-gray-300 leading-relaxed max-w-4xl mx-auto">
-                  Ready to transform your ideas into reality? We're here to help you every step of the way. 
-                  Reach out to us and let's start your digital journey today.
+                  Ready to transform your ideas into reality? We&apos;re here to help you every step of the way. 
+                  Reach out to us and let&apos;s start your digital journey today.
                 </p>
               </div>
 
@@ -227,7 +226,7 @@ export default function ContactPage() {
                 Get In <span className="text-emerald-400">Touch</span>
               </h2>
               <p className="text-xl text-gray-300 max-w-3xl mx-auto">
-                Choose your preferred way to connect with us. We're always ready to help!
+                                  Choose your preferred way to connect with us. We&apos;re always ready to help!
               </p>
             </div>
 
@@ -460,8 +459,8 @@ export default function ContactPage() {
               </h2>
               
               <p className="text-xl text-gray-300">
-                We understand that technical issues can't wait. For urgent support and emergency assistance, 
-                we're available 24/7 to help resolve critical problems.
+                                We understand that technical issues can&apos;t wait. For urgent support and emergency assistance,
+                we&apos;re available 24/7 to help resolve critical problems.
               </p>
               
               <div className="flex flex-col sm:flex-row gap-4 justify-center">

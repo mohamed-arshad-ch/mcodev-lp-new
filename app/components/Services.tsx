@@ -25,13 +25,6 @@ export default function Services() {
     return () => observer.disconnect()
   }, [])
 
-  useEffect(() => {
-    const interval = setInterval(() => {
-      setActiveIndex((prev) => (prev + 1) % services.length)
-    }, 3000)
-    return () => clearInterval(interval)
-  }, [])
-
   const services = [
     {
       slug: "web-development",
@@ -106,6 +99,13 @@ export default function Services() {
       delay: "700ms"
     }
   ]
+
+  useEffect(() => {
+    const interval = setInterval(() => {
+      setActiveIndex((prev) => (prev + 1) % services.length)
+    }, 3000)
+    return () => clearInterval(interval)
+  }, [services.length])
 
   return (
     <section 
@@ -219,7 +219,7 @@ export default function Services() {
                 Ready to Transform Your Business?
               </h3>
               <p className="text-gray-300 mb-8 max-w-2xl mx-auto text-lg">
-                Let's discuss how our services can help you achieve your digital goals 
+                Let&apos;s discuss how our services can help you achieve your digital goals 
                 and drive unprecedented growth.
               </p>
               

@@ -32,7 +32,7 @@ export default function ServiceDetailPage() {
       title: "Web Development",
       shortDescription: "Cutting-edge web applications built with React, Next.js, and modern frameworks.",
       description: "Transform your digital presence with our cutting-edge web development services. We specialize in creating high-performance, scalable web applications using React, Next.js, and modern frameworks that deliver exceptional user experiences and drive business growth.",
-      fullDescription: `Our web development services encompass the full spectrum of modern web technologies and methodologies. We don't just build websites; we create digital experiences that engage users, drive conversions, and grow with your business.
+      fullDescription: `Our web development services encompass the full spectrum of modern web technologies and methodologies. We don&apos;t just build websites; we create digital experiences that engage users, drive conversions, and grow with your business.
 
 Our team of expert developers leverages the latest technologies including React, Next.js, TypeScript, and modern CSS frameworks to build applications that are not only visually stunning but also highly performant and scalable. Whether you need a simple business website, a complex web application, or an enterprise-level solution, we have the expertise to deliver.
 
@@ -291,7 +291,7 @@ Our SEO services are designed to deliver sustainable, long-term results. We focu
       <div className="min-h-screen bg-gradient-to-br from-slate-900 via-slate-800 to-emerald-900 flex items-center justify-center">
         <div className="text-center">
           <h1 className="text-4xl font-bold text-white mb-4">Service Not Found</h1>
-          <p className="text-gray-300 mb-8">The service you're looking for doesn't exist.</p>
+                          <p className="text-gray-300 mb-8">The service you&apos;re looking for doesn&apos;t exist.</p>
           <Link href="/services" className="text-emerald-400 hover:text-emerald-300">
             ← Back to Services
           </Link>
@@ -419,7 +419,7 @@ Our SEO services are designed to deliver sustainable, long-term results. We focu
               {/* Features */}
               <div className="space-y-8">
                 <h2 className="text-4xl lg:text-5xl font-bold text-white">
-                  What's <span className="text-emerald-400">Included</span>
+                  What&apos;s <span className="text-emerald-400">Included</span>
                 </h2>
                 
                 <div className="grid gap-4">
@@ -548,7 +548,7 @@ Our SEO services are designed to deliver sustainable, long-term results. We focu
               </h2>
               
               <p className="text-xl text-gray-300">
-                Let's discuss your project requirements and create a customized solution that drives your business forward.
+                Let&apos;s discuss your project requirements and create a customized solution that drives your business forward.
               </p>
               
               <div className="flex flex-col sm:flex-row gap-4 justify-center">

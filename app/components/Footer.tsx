@@ -154,7 +154,7 @@ export default function Footer() {
               <div className="space-y-4">
                 <h4 className="text-lg font-semibold text-white">Follow Us</h4>
                 <div className="flex space-x-3">
-                  {socialLinks.map((social, index) => (
+                  {socialLinks.map((social) => (
                     <a
                       key={social.name}
                       href={social.href}
@@ -172,14 +172,14 @@ export default function Footer() {
             </div>
 
             {/* Footer Sections */}
-            {footerSections.map((section, sectionIndex) => (
+            {footerSections.map((section) => (
               <div key={section.title} className="space-y-6">
                 <div className="flex items-center space-x-2">
                   <span className="text-lg">{section.icon}</span>
                   <h4 className="text-lg lg:text-xl font-bold text-white">{section.title}</h4>
                 </div>
                 <ul className="space-y-3">
-                  {section.links.map((link, linkIndex) => (
+                  {section.links.map((link) => (
                     <li key={link.name}>
                       <Link
                         href={link.href}

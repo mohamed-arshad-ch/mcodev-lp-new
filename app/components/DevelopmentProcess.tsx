@@ -26,7 +26,7 @@ export default function DevelopmentProcess() {
 
   useEffect(() => {
     const interval = setInterval(() => {
-      setActiveStep((prev) => (prev + 1) % processSteps.length)
+      setActiveStep((prev) => (prev + 1) % 6)
     }, 4000)
     return () => clearInterval(interval)
   }, [])
@@ -244,7 +244,7 @@ export default function DevelopmentProcess() {
                 Ready to Experience Our Process?
               </h3>
               <p className="text-gray-300 mb-8 text-lg max-w-2xl mx-auto">
-                Let's discuss how our proven methodology can transform your ideas into successful digital solutions 
+                Let&apos;s discuss how our proven methodology can transform your ideas into successful digital solutions 
                 that exceed your expectations.
               </p>
               

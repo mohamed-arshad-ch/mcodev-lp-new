@@ -155,13 +155,13 @@ export default function Hero() {
                     <span className="text-gray-500">01</span> const <span className="text-blue-300">innovation</span> = {'{'}
                   </div>
                   <div className="text-emerald-300 pl-4">
-                    <span className="text-gray-500">02</span>   <span className="text-yellow-300">ai</span>: <span className="text-green-300">'cutting-edge'</span>,
+                    <span className="text-gray-500">02</span>   <span className="text-yellow-300">ai</span>: <span className="text-green-300">&apos;cutting-edge&apos;</span>,
                   </div>
                   <div className="text-emerald-300 pl-4">
-                    <span className="text-gray-500">03</span>   <span className="text-yellow-300">performance</span>: <span className="text-green-300">'lightning-fast'</span>,
+                    <span className="text-gray-500">03</span>   <span className="text-yellow-300">performance</span>: <span className="text-green-300">&apos;lightning-fast&apos;</span>,
                   </div>
                   <div className="text-emerald-300 pl-4">
-                    <span className="text-gray-500">04</span>   <span className="text-yellow-300">scalability</span>: <span className="text-green-300">'unlimited'</span>
+                    <span className="text-gray-500">04</span>   <span className="text-yellow-300">scalability</span>: <span className="text-green-300">&apos;unlimited&apos;</span>
                   </div>
                   <div className="text-purple-300">
                     <span className="text-gray-500">05</span> {'}'}

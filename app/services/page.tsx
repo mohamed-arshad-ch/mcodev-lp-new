@@ -279,7 +279,7 @@ export default function ServicesPage() {
             </div>
 
             <div className="grid md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-8">
-              {services.map((service, index) => (
+              {services.map((service) => (
                 <div
                   key={service.slug}
                   className="group relative bg-white/5 backdrop-blur-xl border border-white/10 rounded-3xl p-8 hover:bg-white/10 transition-all duration-500 hover:scale-105"
@@ -357,7 +357,7 @@ export default function ServicesPage() {
                 </h2>
                 
                 <p className="text-xl text-gray-300 leading-relaxed">
-                  We don't just deliver services; we create partnerships that drive long-term success. 
+                  We don&apos;t just deliver services; we create partnerships that drive long-term success. 
                   Our commitment to quality, innovation, and client satisfaction sets us apart.
                 </p>
                 
@@ -401,7 +401,7 @@ export default function ServicesPage() {
                   </h3>
                   
                   <p className="text-gray-300 mb-8">
-                    Let's discuss your project requirements and create a customized solution that drives your business forward.
+                    Let&apos;s discuss your project requirements and create a customized solution that drives your business forward.
                   </p>
                   
                   <div className="space-y-4">

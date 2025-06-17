@@ -55,7 +55,7 @@ export default function WhyMcodev() {
     {
       icon: "🌟",
       title: "Innovation First",
-      description: "We don't just follow trends, we create them. Our team pioneers new technologies and approaches.",
+      description: "We don&apos;t just follow trends, we create them. Our team pioneers new technologies and approaches.",
       metric: "Industry Leading",
       gradient: "from-yellow-500 to-amber-500"
     },
@@ -104,7 +104,7 @@ export default function WhyMcodev() {
           <p className={`text-xl lg:text-2xl text-gray-300 max-w-3xl mx-auto leading-relaxed transition-all duration-1000 delay-200 ${
             isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'
           }`}>
-            We're not just another development agency. We're your technology partners, 
+            We&apos;re not just another development agency. We&apos;re your technology partners, 
             committed to transforming your vision into digital reality.
           </p>
         </div>

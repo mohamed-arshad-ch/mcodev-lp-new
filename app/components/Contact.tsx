@@ -130,20 +130,20 @@ export default function Contact() {
         {/* Header */}
         <div className="text-center mb-16 lg:mb-24">
           <div className="inline-flex items-center px-4 py-2 rounded-full bg-emerald-500/10 border border-emerald-500/20 backdrop-blur-sm mb-6">
-            <span className="text-emerald-400 text-sm font-medium">💬 Let's Connect</span>
+            <span className="text-emerald-400 text-sm font-medium">💬 Let&apos;s Connect</span>
           </div>
           
           <h2 className={`text-4xl sm:text-5xl lg:text-6xl font-bold text-white leading-tight mb-6 transition-all duration-1000 ${
             isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'
           }`}>
-            Let's Build Something <span className="bg-gradient-to-r from-emerald-400 to-blue-400 bg-clip-text text-transparent">Amazing</span>
+            Let&apos;s Build Something <span className="bg-gradient-to-r from-emerald-400 to-blue-400 bg-clip-text text-transparent">Amazing</span>
           </h2>
           
           <p className={`text-xl lg:text-2xl text-gray-300 max-w-3xl mx-auto leading-relaxed transition-all duration-1000 delay-200 ${
             isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'
           }`}>
             Ready to transform your vision into reality? Choose your preferred way to connect 
-            and let's start building the future together.
+            and let&apos;s start building the future together.
           </p>
         </div>
 
@@ -245,8 +245,8 @@ export default function Contact() {
                 Ready to Start Your Project?
               </h3>
               <p className="text-gray-300 mb-8 text-lg max-w-2xl mx-auto">
-                Join hundreds of satisfied clients who've transformed their businesses with our solutions. 
-                Let's make your vision a reality.
+                Join hundreds of satisfied clients who&apos;ve transformed their businesses with our solutions. 
+                Let&apos;s make your vision a reality.
               </p>
               
               <button 

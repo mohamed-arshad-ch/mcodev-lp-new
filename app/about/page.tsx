@@ -1,7 +1,6 @@
 "use client"
 
 import React, { useEffect, useState } from "react"
-import Image from "next/image"
 import Link from "next/link"
 import Head from "next/head"
 import Header from "../components/Header"
@@ -202,7 +201,7 @@ export default function About() {
                 </h3>
                 
                 <p className="text-lg text-gray-300 leading-relaxed">
-                  To be Kerala's premier technology partner, recognized globally for our innovative solutions 
+                  To be Kerala&apos;s premier technology partner, recognized globally for our innovative solutions 
                   and commitment to excellence. We envision a future where every business, regardless of size, 
                   has access to world-class digital solutions.
                 </p>
@@ -305,7 +304,7 @@ export default function About() {
             </h2>
             
             <p className="text-xl text-gray-300">
-              Let's collaborate and bring your ideas to life with cutting-edge technology solutions.
+                              Let&apos;s collaborate and bring your ideas to life with cutting-edge technology solutions.
             </p>
             
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
