@@ -2,7 +2,6 @@
 
 import React, { useEffect, useState } from "react"
 import Link from "next/link"
-import Head from "next/head"
 import { useParams } from "next/navigation"
 import Header from "../../components/Header"
 import Footer from "../../components/Footer"
@@ -300,19 +299,89 @@ Our SEO services are designed to deliver sustainable, long-term results. We focu
     )
   }
 
+  // Generate structured data for the service
+  const serviceStructuredData = {
+    "@context": "https://schema.org",
+    "@type": "Service",
+    "name": service.title,
+    "description": service.description,
+    "provider": {
+      "@type": "Organization",
+      "name": "MCODEV Bytes",
+      "url": "https://www.mcodevbytes.in",
+      "logo": "https://www.mcodevbytes.in/logo.png"
+    },
+    "areaServed": {
+      "@type": "Place",
+      "name": "Kerala, India"
+    },
+    "offers": {
+      "@type": "Offer",
+      "price": service.pricing,
+      "priceCurrency": "INR",
+      "availability": "https://schema.org/InStock"
+    },
+    "hasOfferCatalog": {
+      "@type": "OfferCatalog",
+      "name": service.title,
+      "itemListElement": service.features.map((feature, index) => ({
+        "@type": "Offer",
+        "position": index + 1,
+        "itemOffered": {
+          "@type": "Service",
+          "name": feature
+        }
+      }))
+    }
+  }
+
+  // Breadcrumb structured data
+  const breadcrumbStructuredData = {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    "itemListElement": [
+      {
+        "@type": "ListItem",
+        "position": 1,
+        "name": "Home",
+        "item": "https://www.mcodevbytes.in"
+      },
+      {
+        "@type": "ListItem",
+        "position": 2,
+        "name": "Services",
+        "item": "https://www.mcodevbytes.in/services"
+      },
+      {
+        "@type": "ListItem",
+        "position": 3,
+        "name": service.title,
+        "item": `https://www.mcodevbytes.in/services/${slug}`
+      }
+    ]
+  }
+
   return (
     <>
-      <Head>
-        <title>{service.title} - MCODEV Bytes | Professional {service.title} Services</title>
-        <meta name="description" content={service.description} />
-        <meta name="keywords" content={`${service.title.toLowerCase()}, ${service.features.slice(0, 5).join(', ').toLowerCase()}`} />
-      </Head>
+      {/* Structured Data for Enhanced SEO */}
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify(serviceStructuredData)
+        }}
+      />
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify(breadcrumbStructuredData)
+        }}
+      />
       
       <div className="min-h-screen bg-gradient-to-br from-slate-900 via-slate-800 to-emerald-900">
         <Header />
         
         {/* Hero Section */}
-        <section className="relative overflow-hidden pt-32 pb-20 lg:pt-40 lg:pb-32">
+        <section className="relative overflow-hidden pt-32 pb-20 lg:pt-40 lg:pb-32" role="banner" aria-label={`${service.title} Service Details`}>
           {/* Dynamic background */}
           <div className="absolute inset-0">
             <div className="absolute inset-0 bg-[radial-gradient(circle_at_center,rgba(34,197,94,0.1)_0%,transparent_50%)]" />
@@ -329,16 +398,30 @@ Our SEO services are designed to deliver sustainable, long-term results. We focu
           </div>
 
           <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            {/* Breadcrumb */}
-            <div className="mb-8">
-              <nav className="flex items-center space-x-2 text-gray-400">
-                <Link href="/" className="hover:text-emerald-400 transition-colors">Home</Link>
-                <span>→</span>
-                <Link href="/services" className="hover:text-emerald-400 transition-colors">Services</Link>
-                <span>→</span>
-                <span className="text-white">{service.title}</span>
-              </nav>
-            </div>
+            {/* Breadcrumb Navigation for SEO */}
+            <nav aria-label="Breadcrumb" className="mb-8">
+              <ol className="flex items-center space-x-2 text-sm text-gray-400">
+                <li>
+                  <Link href="/" className="hover:text-emerald-400 transition-colors">
+                    Home
+                  </Link>
+                </li>
+                <li className="flex items-center">
+                  <svg className="w-4 h-4 mx-2" fill="currentColor" viewBox="0 0 20 20">
+                    <path fillRule="evenodd" d="M7.293 14.707a1 1 0 010-1.414L10.586 10 7.293 6.707a1 1 0 011.414-1.414l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414 0z" clipRule="evenodd" />
+                  </svg>
+                  <Link href="/services" className="hover:text-emerald-400 transition-colors">
+                    Services
+                  </Link>
+                </li>
+                <li className="flex items-center">
+                  <svg className="w-4 h-4 mx-2" fill="currentColor" viewBox="0 0 20 20">
+                    <path fillRule="evenodd" d="M7.293 14.707a1 1 0 010-1.414L10.586 10 7.293 6.707a1 1 0 011.414-1.414l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414 0z" clipRule="evenodd" />
+                  </svg>
+                  <span className="text-emerald-400 font-medium">{service.title}</span>
+                </li>
+              </ol>
+            </nav>
 
             <div className="grid lg:grid-cols-2 gap-16 items-center">
               {/* Content */}
@@ -348,10 +431,13 @@ Our SEO services are designed to deliver sustainable, long-term results. We focu
                   <span className="text-emerald-400 text-sm font-medium">{service.icon} {service.title}</span>
                 </div>
 
-                {/* Title */}
+                {/* SEO Optimized Title */}
                 <h1 className="text-5xl sm:text-6xl lg:text-7xl font-bold text-white leading-tight">
                   <span className="block bg-gradient-to-r from-white via-emerald-200 to-emerald-400 bg-clip-text text-transparent">
-                    {service.title}
+                    {service.title} in Kerala
+                  </span>
+                  <span className="block text-2xl sm:text-3xl lg:text-4xl font-normal text-gray-300 mt-4">
+                    by MCODEV Bytes
                   </span>
                 </h1>
                 

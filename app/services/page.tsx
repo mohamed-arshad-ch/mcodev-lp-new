@@ -2,7 +2,6 @@
 
 import React, { useEffect, useState } from "react"
 import Link from "next/link"
-import Head from "next/head"
 import Header from "../components/Header"
 import Footer from "../components/Footer"
 
@@ -20,6 +19,109 @@ export default function ServicesPage() {
     window.addEventListener('mousemove', handleMouseMove)
     return () => window.removeEventListener('mousemove', handleMouseMove)
   }, [])
+
+  // Breadcrumb structured data
+  const breadcrumbStructuredData = {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    "itemListElement": [
+      {
+        "@type": "ListItem",
+        "position": 1,
+        "name": "Home",
+        "item": "https://www.mcodevbytes.in"
+      },
+      {
+        "@type": "ListItem",
+        "position": 2,
+        "name": "Services",
+        "item": "https://www.mcodevbytes.in/services"
+      }
+    ]
+  }
+
+  // Services catalog structured data
+  const servicesCatalogData = {
+    "@context": "https://schema.org",
+    "@type": "ItemList",
+    "name": "MCODEV Bytes Digital Services",
+    "description": "Comprehensive digital services offered by MCODEV Bytes",
+    "numberOfItems": 8,
+    "itemListElement": [
+      {
+        "@type": "Service",
+        "position": 1,
+        "name": "Web Development",
+        "description": "Cutting-edge web applications built with React, Next.js, and modern frameworks",
+        "provider": {
+          "@type": "Organization",
+          "name": "MCODEV Bytes"
+        },
+        "areaServed": "Kerala, India",
+        "url": "https://www.mcodevbytes.in/services/web-development"
+      },
+      {
+        "@type": "Service",
+        "position": 2,
+        "name": "Mobile App Development",
+        "description": "Native and cross-platform mobile applications for iOS and Android",
+        "provider": {
+          "@type": "Organization",
+          "name": "MCODEV Bytes"
+        },
+        "areaServed": "Kerala, India",
+        "url": "https://www.mcodevbytes.in/services/app-development"
+      },
+      {
+        "@type": "Service",
+        "position": 3,
+        "name": "AI Business Automation",
+        "description": "Intelligent automation solutions powered by machine learning and AI",
+        "provider": {
+          "@type": "Organization",
+          "name": "MCODEV Bytes"
+        },
+        "areaServed": "Kerala, India",
+        "url": "https://www.mcodevbytes.in/services/ai-business-automation"
+      },
+      {
+        "@type": "Service",
+        "position": 4,
+        "name": "Digital Marketing",
+        "description": "Data-driven marketing strategies that amplify your brand presence",
+        "provider": {
+          "@type": "Organization",
+          "name": "MCODEV Bytes"
+        },
+        "areaServed": "Kerala, India",
+        "url": "https://www.mcodevbytes.in/services/digital-marketing"
+      },
+      {
+        "@type": "Service",
+        "position": 5,
+        "name": "Branding",
+        "description": "Comprehensive brand identity solutions that capture your essence",
+        "provider": {
+          "@type": "Organization",
+          "name": "MCODEV Bytes"
+        },
+        "areaServed": "Kerala, India",
+        "url": "https://www.mcodevbytes.in/services/branding"
+      },
+      {
+        "@type": "Service",
+        "position": 6,
+        "name": "E-commerce Solutions",
+        "description": "Robust e-commerce platforms with advanced features for online success",
+        "provider": {
+          "@type": "Organization",
+          "name": "MCODEV Bytes"
+        },
+        "areaServed": "Kerala, India",
+        "url": "https://www.mcodevbytes.in/services/ecommerce-solution"
+      }
+    ]
+  }
 
   const services = [
     {
@@ -170,11 +272,19 @@ export default function ServicesPage() {
 
   return (
     <>
-      <Head>
-        <title>Our Services - MCODEV Bytes | Web Development, App Development & Digital Solutions</title>
-        <meta name="description" content="Explore our comprehensive digital services including web development, mobile app development, AI automation, digital marketing, and more. Transform your business with MCODEV Bytes." />
-        <meta name="keywords" content="web development services, mobile app development, AI automation, digital marketing, branding, e-commerce solutions, ERP systems, SEO services" />
-      </Head>
+      {/* Structured Data for SEO */}
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify(breadcrumbStructuredData)
+        }}
+      />
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify(servicesCatalogData)
+        }}
+      />
       
       <div className="min-h-screen bg-gradient-to-br from-slate-900 via-slate-800 to-emerald-900">
         <Header />
@@ -218,20 +328,37 @@ export default function ServicesPage() {
           </div>
 
           <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-32 pb-16 lg:pt-40 lg:pb-24">
+            {/* Breadcrumb Navigation for SEO */}
+            <nav aria-label="Breadcrumb" className="mb-8">
+              <ol className="flex items-center space-x-2 text-sm text-gray-400">
+                <li>
+                  <Link href="/" className="hover:text-emerald-400 transition-colors">
+                    Home
+                  </Link>
+                </li>
+                <li className="flex items-center">
+                  <svg className="w-4 h-4 mx-2" fill="currentColor" viewBox="0 0 20 20">
+                    <path fillRule="evenodd" d="M7.293 14.707a1 1 0 010-1.414L10.586 10 7.293 6.707a1 1 0 011.414-1.414l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414 0z" clipRule="evenodd" />
+                  </svg>
+                  <span className="text-emerald-400 font-medium">Services</span>
+                </li>
+              </ol>
+            </nav>
+            
             <div className="text-center space-y-8">
               {/* Badge */}
               <div className="inline-flex items-center px-4 py-2 rounded-full bg-emerald-500/10 border border-emerald-500/20 backdrop-blur-sm">
                 <span className="text-emerald-400 text-sm font-medium">💼 Our Services</span>
               </div>
 
-              {/* Main heading */}
+              {/* Main heading - SEO optimized */}
               <div className="space-y-6">
                 <h1 className="text-5xl sm:text-6xl lg:text-7xl font-bold text-white leading-[0.9] tracking-tight">
                   <span className="block bg-gradient-to-r from-white via-emerald-200 to-emerald-400 bg-clip-text text-transparent">
-                    Comprehensive
+                    Digital Services
                   </span>
                   <span className="block text-2xl sm:text-3xl lg:text-4xl font-normal text-gray-300 mt-4">
-                    Digital Solutions
+                    Kerala's Leading IT Solutions
                   </span>
                 </h1>
                 

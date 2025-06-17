@@ -1,0 +1,100 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.sitemaps.org/schemas/sitemap/0.9 http://www.sitemaps.org/schemas/sitemap/0.9/sitemap.xsd">
+  <!-- Homepage -->
+  <url>
+    <loc>https://www.mcodevbytes.in</loc>
+    <lastmod>2024-01-20T00:00:00+00:00</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>1.0</priority>
+  </url>
+  
+  <!-- About Page -->
+  <url>
+    <loc>https://www.mcodevbytes.in/about</loc>
+    <lastmod>2024-01-20T00:00:00+00:00</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  
+  <!-- Contact Page -->
+  <url>
+    <loc>https://www.mcodevbytes.in/contact</loc>
+    <lastmod>2024-01-20T00:00:00+00:00</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  
+  <!-- Services Main Page -->
+  <url>
+    <loc>https://www.mcodevbytes.in/services</loc>
+    <lastmod>2024-01-20T00:00:00+00:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.9</priority>
+  </url>
+  
+  <!-- Individual Service Pages -->
+  
+  <!-- Web Development Service -->
+  <url>
+    <loc>https://www.mcodevbytes.in/services/web-development</loc>
+    <lastmod>2024-01-20T00:00:00+00:00</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  
+  <!-- Mobile App Development Service -->
+  <url>
+    <loc>https://www.mcodevbytes.in/services/app-development</loc>
+    <lastmod>2024-01-20T00:00:00+00:00</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  
+  <!-- AI Business Automation Service -->
+  <url>
+    <loc>https://www.mcodevbytes.in/services/ai-business-automation</loc>
+    <lastmod>2024-01-20T00:00:00+00:00</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  
+  <!-- Digital Marketing Service -->
+  <url>
+    <loc>https://www.mcodevbytes.in/services/digital-marketing</loc>
+    <lastmod>2024-01-20T00:00:00+00:00</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  
+  <!-- Branding Service -->
+  <url>
+    <loc>https://www.mcodevbytes.in/services/branding</loc>
+    <lastmod>2024-01-20T00:00:00+00:00</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  
+  <!-- E-commerce Solution Service -->
+  <url>
+    <loc>https://www.mcodevbytes.in/services/ecommerce-solution</loc>
+    <lastmod>2024-01-20T00:00:00+00:00</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  
+  <!-- ERP Cloud Solution Service -->
+  <url>
+    <loc>https://www.mcodevbytes.in/services/erp-cloud-solution</loc>
+    <lastmod>2024-01-20T00:00:00+00:00</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  
+  <!-- SEO Service -->
+  <url>
+    <loc>https://www.mcodevbytes.in/services/seo</loc>
+    <lastmod>2024-01-20T00:00:00+00:00</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+</urlset> 

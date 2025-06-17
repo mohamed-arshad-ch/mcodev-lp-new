@@ -2,11 +2,8 @@
 
 import React, { useEffect, useState } from "react"
 import Link from "next/link"
-import Head from "next/head"
 import Header from "../components/Header"
 import Footer from "../components/Footer"
-
-
 
 export default function About() {
   const [mousePosition, setMousePosition] = useState({ x: 0, y: 0 })
@@ -23,7 +20,107 @@ export default function About() {
     return () => window.removeEventListener('mousemove', handleMouseMove)
   }, [])
 
+  // Breadcrumb Structured Data
+  const breadcrumbStructuredData = {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    "itemListElement": [
+      {
+        "@type": "ListItem",
+        "position": 1,
+        "name": "Home",
+        "item": "https://www.mcodevbytes.in"
+      },
+      {
+        "@type": "ListItem", 
+        "position": 2,
+        "name": "About Us",
+        "item": "https://www.mcodevbytes.in/about"
+      }
+    ]
+  }
 
+  // Structured Data for About Page SEO
+  const aboutPageStructuredData = {
+    "@context": "https://schema.org",
+    "@type": "AboutPage",
+    "mainEntity": {
+      "@type": "Organization",
+      "name": "MCODEV Bytes",
+      "url": "https://www.mcodevbytes.in",
+      "logo": "https://www.mcodevbytes.in/logo.png",
+      "description": "Leading web development company in Kerala specializing in custom web applications, mobile app development, AI automation, and digital marketing solutions.",
+      "foundingDate": "2023",
+      "founder": {
+        "@type": "Person",
+        "name": "MCODEV Bytes Team"
+      },
+      "address": {
+        "@type": "PostalAddress",
+        "addressLocality": "Malappuram",
+        "addressRegion": "Kerala",
+        "addressCountry": "IN"
+      },
+      "contactPoint": {
+        "@type": "ContactPoint",
+        "telephone": "+91-9847274569",
+        "contactType": "customer service",
+        "availableLanguage": ["English", "Malayalam", "Hindi"]
+      },
+      "sameAs": [
+        "https://www.linkedin.com/company/mcodev-bytes",
+        "https://www.instagram.com/mcodev_bytes/",
+        "https://www.facebook.com/mcodevbytes",
+        "https://x.com/MCODEVBYTES"
+      ],
+      "knowsAbout": [
+        "Web Development",
+        "Mobile App Development",
+        "AI Business Automation",
+        "Digital Marketing",
+        "E-commerce Solutions",
+        "React.js Development",
+        "Next.js Development",
+        "Flutter Development",
+        "Node.js Development"
+      ],
+      "hasOfferCatalog": {
+        "@type": "OfferCatalog",
+        "name": "Digital Services",
+        "itemListElement": [
+          {
+            "@type": "Offer",
+            "itemOffered": {
+              "@type": "Service",
+              "name": "Web Development",
+              "description": "Custom web application development using React.js, Next.js, and modern technologies"
+            }
+          },
+          {
+            "@type": "Offer",
+            "itemOffered": {
+              "@type": "Service",
+              "name": "Mobile App Development",
+              "description": "Cross-platform mobile app development using Flutter and React Native"
+            }
+          },
+          {
+            "@type": "Offer",
+            "itemOffered": {
+              "@type": "Service",
+              "name": "AI Business Automation",
+              "description": "AI-powered business automation solutions and machine learning integration"
+            }
+          }
+        ]
+      },
+      "award": [
+        "200+ Successful Projects",
+        "99.8% Success Rate",
+        "50+ Happy Clients"
+      ]
+    }
+  }
 
   const milestones = [
     { year: "2023", title: "Company Founded", description: "MCODEV Bytes was established in Malappuram, Kerala" },
@@ -64,17 +161,25 @@ export default function About() {
 
   return (
     <>
-      <Head>
-        <title>About MCODEV Bytes - Leading Web Development Company in Kerala</title>
-        <meta name="description" content="Learn about MCODEV Bytes, a premier web development company in Kerala. Discover our mission, vision, values, and journey in delivering cutting-edge digital solutions." />
-        <meta name="keywords" content="about mcodev, web development company kerala, software development team, digital agency malappuram" />
-      </Head>
+      {/* Structured Data for Enhanced SEO */}
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify(aboutPageStructuredData)
+        }}
+      />
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify(breadcrumbStructuredData)
+        }}
+      />
       
       <div className="min-h-screen bg-gradient-to-br from-slate-900 via-slate-800 to-emerald-900">
         <Header />
       
       {/* Hero Section */}
-      <section className="relative min-h-screen overflow-hidden">
+      <section className="relative min-h-screen overflow-hidden" role="banner" aria-label="About MCODEV Bytes Hero Section">
         {/* Dynamic background */}
         <div className="absolute inset-0">
           <div className="absolute inset-0 bg-[radial-gradient(circle_at_center,rgba(34,197,94,0.1)_0%,transparent_50%)]" />
@@ -112,20 +217,37 @@ export default function About() {
         </div>
 
         <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-32 pb-16 lg:pt-40 lg:pb-24">
+          {/* Breadcrumb Navigation for SEO */}
+          <nav aria-label="Breadcrumb" className="mb-8">
+            <ol className="flex items-center space-x-2 text-sm text-gray-400">
+              <li>
+                <Link href="/" className="hover:text-emerald-400 transition-colors">
+                  Home
+                </Link>
+              </li>
+              <li className="flex items-center">
+                <svg className="w-4 h-4 mx-2" fill="currentColor" viewBox="0 0 20 20">
+                  <path fillRule="evenodd" d="M7.293 14.707a1 1 0 010-1.414L10.586 10 7.293 6.707a1 1 0 011.414-1.414l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414 0z" clipRule="evenodd" />
+                </svg>
+                <span className="text-emerald-400 font-medium">About Us</span>
+              </li>
+            </ol>
+          </nav>
+          
           <div className="text-center space-y-8">
             {/* Badge */}
             <div className="inline-flex items-center px-4 py-2 rounded-full bg-emerald-500/10 border border-emerald-500/20 backdrop-blur-sm">
               <span className="text-emerald-400 text-sm font-medium">👥 About MCODEV Bytes</span>
             </div>
 
-            {/* Main heading */}
+            {/* Main heading - SEO optimized */}
             <div className="space-y-6">
               <h1 className="text-5xl sm:text-6xl lg:text-7xl font-bold text-white leading-[0.9] tracking-tight">
                 <span className="block bg-gradient-to-r from-white via-emerald-200 to-emerald-400 bg-clip-text text-transparent">
-                  Building the Future
+                  About MCODEV Bytes
                 </span>
                 <span className="block text-2xl sm:text-3xl lg:text-4xl font-normal text-gray-300 mt-4">
-                  Together
+                  Kerala's Leading Web Development Company
                 </span>
               </h1>
               
@@ -161,7 +283,7 @@ export default function About() {
               </div>
               
               <h2 className="text-4xl lg:text-5xl font-bold text-white leading-tight">
-                Transforming Ideas into 
+                Our Mission: Transforming Ideas into 
                 <span className="block bg-gradient-to-r from-emerald-400 to-blue-400 bg-clip-text text-transparent">
                   Digital Reality
                 </span>
@@ -196,8 +318,8 @@ export default function About() {
                 </div>
                 
                 <h3 className="text-3xl lg:text-4xl font-bold text-white">
-                  Leading the Digital 
-                  <span className="block text-blue-400">Revolution</span>
+                  Our Vision: Leading the Digital 
+                  <span className="block text-blue-400">Revolution in Kerala</span>
                 </h3>
                 
                 <p className="text-lg text-gray-300 leading-relaxed">
@@ -253,8 +375,6 @@ export default function About() {
           </div>
         </div>
       </section>
-
-
 
       {/* Journey/Timeline Section */}
       <section className="relative py-20 lg:py-32 overflow-hidden">

@@ -91,7 +91,8 @@ export default function RootLayout({
 }: Readonly<{
   children: React.ReactNode;
 }>) {
-  const structuredData = {
+  // Multiple structured data objects for better SEO
+  const organizationData = {
     "@context": "https://schema.org",
     "@type": "Organization",
     "name": "MCODEV Bytes",
@@ -153,14 +154,87 @@ export default function RootLayout({
     }
   };
 
+  // Website structured data
+  const websiteData = {
+    "@context": "https://schema.org",
+    "@type": "WebSite",
+    "name": "MCODEV Bytes",
+    "url": "https://www.mcodevbytes.in",
+    "description": "Leading web development company in Kerala specializing in custom web applications, mobile app development, AI automation, and digital marketing solutions.",
+    "inLanguage": "en-US",
+    "copyrightYear": "2023",
+    "copyrightHolder": {
+      "@type": "Organization",
+      "name": "MCODEV Bytes"
+    },
+    "potentialAction": {
+      "@type": "SearchAction",
+      "target": {
+        "@type": "EntryPoint",
+        "urlTemplate": "https://www.mcodevbytes.in/search?q={search_term_string}"
+      },
+      "query-input": "required name=search_term_string"
+    }
+  };
+
   return (
     <html lang="en">
       <head>
+        {/* Basic Meta Tags */}
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <meta httpEquiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="format-detection" content="telephone=no" />
+        
+        {/* Favicon and Icons */}
         <link rel="icon" href="/logo.png" type="image/png" />
         <link rel="apple-touch-icon" href="/logo.png" />
+        <link rel="shortcut icon" href="/logo.png" />
+        
+        {/* DNS Prefetch for Performance */}
+        <link rel="dns-prefetch" href="//www.google-analytics.com" />
+        <link rel="dns-prefetch" href="//fonts.googleapis.com" />
+        <link rel="dns-prefetch" href="//cdnjs.cloudflare.com" />
+        
+        {/* Preconnect for Critical Resources */}
+        <link rel="preconnect" href="https://fonts.googleapis.com" />
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="anonymous" />
+        
+        {/* Additional SEO Meta Tags */}
+        <meta name="theme-color" content="#059669" />
+        <meta name="msapplication-TileColor" content="#059669" />
+        <meta name="application-name" content="MCODEV Bytes" />
+        <meta name="apple-mobile-web-app-title" content="MCODEV Bytes" />
+        <meta name="apple-mobile-web-app-capable" content="yes" />
+        <meta name="apple-mobile-web-app-status-bar-style" content="default" />
+        <meta name="mobile-web-app-capable" content="yes" />
+        
+        {/* Geo Location */}
+        <meta name="geo.region" content="IN-KL" />
+        <meta name="geo.placename" content="Malappuram, Kerala" />
+        <meta name="geo.position" content="11.0168;76.0854" />
+        <meta name="ICBM" content="11.0168, 76.0854" />
+        
+        {/* Business Information */}
+        <meta name="contact" content="contact@mcodevbytes.in" />
+        <meta name="reply-to" content="contact@mcodevbytes.in" />
+        <meta name="owner" content="MCODEV Bytes" />
+        <meta name="url" content="https://www.mcodevbytes.in" />
+        <meta name="identifier-URL" content="https://www.mcodevbytes.in" />
+        <meta name="directory" content="submission" />
+        <meta name="category" content="Technology, Web Development, Software Development" />
+        <meta name="coverage" content="Worldwide" />
+        <meta name="distribution" content="Global" />
+        <meta name="rating" content="General" />
+        <meta name="revisit-after" content="7 days" />
+        
+        {/* Structured Data */}
         <script
           type="application/ld+json"
-          dangerouslySetInnerHTML={{ __html: JSON.stringify(structuredData) }}
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(organizationData) }}
+        />
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(websiteData) }}
         />
       </head>
       <body className={`${poppins.variable} font-sans antialiased`}>

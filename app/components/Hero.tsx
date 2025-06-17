@@ -20,12 +20,18 @@ export default function Hero() {
   }, [])
 
   const techStack = [
-    { name: "React.js", icon: "⚛️" },
     { name: "Next.js", icon: "▲" },
-    { name: "Flutter", icon: "📱" },
-    { name: "Node.js", icon: "🟢" },
+    { name: "React.js", icon: "⚛️" },
+    { name: "React Native", icon: "⚛️" },
+    { name: "JavaScript", icon: "🟨" },
     { name: "Python", icon: "🐍" },
-    { name: "AI/ML", icon: "🤖" }
+    { name: "Express.js", icon: "🚀" },
+    { name: "FastAPI", icon: "⚡" },
+    { name: "MongoDB", icon: "🍃" },
+    { name: "PostgreSQL", icon: "🐘" },
+    { name: "Neon Serverless", icon: "⚡" },
+    { name: "Supabase", icon: "🔋" },
+    { name: "Unreal Engine", icon: "🎮" }
   ]
 
   return (
@@ -117,17 +123,17 @@ export default function Hero() {
               </Link>
             </div>
 
-            {/* Tech Stack */}
+            {/* Tech Stack - Enhanced Layout */}
             <div className="space-y-4">
-              <p className="text-gray-400 text-sm uppercase tracking-wider">Powered By</p>
-              <div className="flex flex-wrap gap-3 justify-center lg:justify-start">
+              <p className="text-gray-400 text-sm uppercase tracking-wider font-semibold">Powered By</p>
+              <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-3 xl:grid-cols-4 gap-3 max-w-4xl mx-auto lg:mx-0">
                 {techStack.map((tech, index) => (
                   <div
                     key={index}
-                    className="group flex items-center space-x-2 px-4 py-2 bg-white/5 border border-white/10 rounded-xl backdrop-blur-sm hover:bg-white/10 transition-all duration-300 hover:scale-105"
+                    className="group flex items-center space-x-2 px-3 py-2 bg-white/5 border border-white/10 rounded-xl backdrop-blur-sm hover:bg-white/10 transition-all duration-300 hover:scale-105 hover:border-emerald-500/30"
                   >
-                    <span className="text-lg group-hover:scale-110 transition-transform duration-300">{tech.icon}</span>
-                    <span className="text-gray-300 text-sm font-medium">{tech.name}</span>
+                    <span className="text-base group-hover:scale-110 transition-transform duration-300 flex-shrink-0">{tech.icon}</span>
+                    <span className="text-gray-300 text-xs font-medium truncate">{tech.name}</span>
                   </div>
                 ))}
               </div>
